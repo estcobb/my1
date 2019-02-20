@@ -1,0 +1,16 @@
+---
+- name: My first playbook
+  hosts: esther
+  gather_facts: false
+
+
+  tasks:
+   - name: simple example
+     raw: show version
+
+
+
+     register: print_output
+
+
+   - debug: var=print_output 

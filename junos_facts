@@ -1,0 +1,12 @@
+---
+
+ - name: junos play
+   hosts: juniper
+   gather_facts: no
+   connection: local
+   vars:
+    cli: 
+     host: "{{ inventory_host-name }}" 
+     username: steve
+     password: Password
+     transport: cli 

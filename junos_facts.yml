@@ -1,0 +1,20 @@
+---
+
+ - name: junos play
+   hosts: juniper
+   gather_facts: no
+   connection: local
+   vars:
+    cli: 
+     host: "{{ inventory_hostname }}" 
+     username: steve
+     password: Password
+     transport: netconf 
+
+   tasks:
+   - name: JUNOS | Show var 
+     junos_facts:
+       provider: "{{ cli }}" 
+     register: out
+   - debug: var=out  
+  

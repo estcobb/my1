@@ -1,0 +1,17 @@
+---
+ - name: ios play
+   hosts: esther
+   gather_facts: no
+   connection: local
+   vars:
+     cli:
+      host: "{{ inventory_hostname }}"
+      username: esther
+      password: cisco
+      transport: cli
+   tasks:
+    - name: IOS | Show var
+      ios_facts:
+        gather_subset: all
+      register: out
+    - debug: var=out 

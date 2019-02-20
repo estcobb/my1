@@ -1,0 +1,18 @@
+---
+
+ - name: junos play
+   hosts: juniper
+   gather_facts: no
+   connection: local
+   tasks:
+    - name: configure top level configuration
+      junos_config:
+       lines: set system host-name {{inventory_hostname }}
+
+  #  - name: configure interface settings
+  #    junos_config:
+  #     lines:
+  #      - description test interface
+  #      - ip address 10.1.1.1 255.255.255.0
+  #     parents: interface Ethernet1  
+
